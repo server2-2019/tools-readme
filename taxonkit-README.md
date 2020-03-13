@@ -82,7 +82,7 @@ Flags:
 ***
 Examples
 ### 1. Default usage
->>```:::sh
+```:::sh
 $ taxonkit list --ids 9605,239934
 9605
   9606
