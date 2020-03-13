@@ -60,4 +60,49 @@ Flags:
 
 Use "taxonkit [command] --help" for more information about a command
 ```
+***
+## list
+```
+Usage
 
+
+list taxon tree of given taxids
+
+Usage:
+  taxonkit list [flags]
+
+Flags:
+      --ids string      taxid(s), multiple values should be separated by comma
+      --indent string   indent (default "  ")
+      --json            output in JSON format. you can save the result in file with suffix ".json" and open with modern text editor
+  -n, --show-name       output scientific name
+  -r, --show-rank       output rank
+
+```
+***
+Examples
+### 1. Default usage
+>>```:::sh
+$ taxonkit list --ids 9605,239934
+9605
+  9606
+    63221
+    741158
+  1425170
+
+239934
+  239935
+    349741
+  512293
+    512294
+    1131822
+    1262691
+    1263034
+  1131336
+  1574264
+  1574265
+  1638783
+  1679444
+  1755639
+  1896967
+  ```
