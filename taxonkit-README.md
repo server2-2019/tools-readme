@@ -25,7 +25,7 @@ Version: 0.5.0<br>
 Author: Wei Shen <shenwei356@gmail.com><br>
 Source code: [https://github.com/shenwei356/taxonkit](https://github.com/shenwei356/taxonkit)<br>
 Documents  : [https://bioinf.shenwei.me/taxonkit](https://bioinf.shenwei.me/taxonkit)<br>
-'''
+```
 Dataset:
 
     Please download and decompress "taxdump.tar.gz":
@@ -59,5 +59,5 @@ Flags:
       --verbose           print verbose information
 
 Use "taxonkit [command] --help" for more information about a command
-'''
+```
 
