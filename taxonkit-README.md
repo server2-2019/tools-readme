@@ -106,3 +106,28 @@ $ taxonkit list --ids 9605,239934
   1755639
   1896967
   ```
+### 2. Removing indent. The list could be used to extract sequences from BLAST database with blastdbcmd
+```
+$ taxonkit list --ids 9605,239934 --indent ""
+9605
+9606
+63221
+741158
+1425170
+
+239934
+239935
+349741
+512293
+512294
+1131822
+1262691
+1263034
+1131336
+1574264
+1574265
+1638783
+1679444
+1755639
+1896967
+```
