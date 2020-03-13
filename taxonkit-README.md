@@ -132,7 +132,7 @@ $ taxonkit list --ids 9605,239934 --indent ""
 1896967
 ```
 **Performance: **Time and memory usage for whole taxon tree:
-```
+```diff
 $ # emptying the buffers cache
 $ su -c "free && sync && echo 3 > /proc/sys/vm/drop_caches && free"
 
