@@ -131,3 +131,15 @@ $ taxonkit list --ids 9605,239934 --indent ""
 1755639
 1896967
 ```
+**Performance: **Time and memory usage for whole taxon tree:
+```
+$ # emptying the buffers cache
+$ su -c "free && sync && echo 3 > /proc/sys/vm/drop_caches && free"
+
+$ memusg -t taxonkit list --ids 1 --indent "" --verbose > t0.txt
+13:52:58.905 [INFO] parsing nodes file: /home/shenwei/.taxonkit/nodes.dmp
+13:53:01.449 [INFO] 2121511 nodes parsed
+
+elapsed time: 4.088s
+peak rss: 441.95 MB
+```
