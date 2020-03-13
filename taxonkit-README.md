@@ -143,3 +143,5 @@ $ memusg -t taxonkit list --ids 1 --indent "" --verbose > t0.txt
 elapsed time: 4.088s
 peak rss: 441.95 MB
 ```
+- "free && sync && echo 3 > /proc/sys/vm/drop_caches && free"<br>
++ "free && sync && echo 3 > /proc/sys/vm/drop_caches && free"<br>
