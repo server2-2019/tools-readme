@@ -11,7 +11,7 @@
 - [reformat](#reformat)
 - [name2taxid](#name2taxid)
 - [taxid-changelog](#taxid-changelog)
-- [genuatocomplete](#genuatocomplete)
+- [genautocomplete](#genautocomplete)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Before use
