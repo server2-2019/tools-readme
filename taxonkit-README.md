@@ -132,9 +132,12 @@ $ taxonkit list --ids 9605,239934 --indent ""
 1896967
 ```
 **Performance: **Time and memory usage for whole taxon tree:
-```diff
+```
 $ # emptying the buffers cache
-$ su -c <font color="">"free && sync && echo 3 > /proc/sys/vm/drop_caches && free"</font>
+$ su -c 
+```
+```html<font color="">"free && sync && echo 3 > /proc/sys/vm/drop_caches && free"</font>```
+```
 
 $ memusg -t taxonkit list --ids 1 --indent "" --verbose > t0.txt
 13:52:58.905 [INFO] parsing nodes file: /home/shenwei/.taxonkit/nodes.dmp
