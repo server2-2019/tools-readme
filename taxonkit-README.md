@@ -136,7 +136,9 @@ $ taxonkit list --ids 9605,239934 --indent ""
 $ # emptying the buffers cache
 $ su -c 
 ```
-```html<font color="">"free && sync && echo 3 > /proc/sys/vm/drop_caches && free"</font>```
+```HTML
+<font color="">"free && sync && echo 3 > /proc/sys/vm/drop_caches && free"</font>
+```
 ```
 
 $ memusg -t taxonkit list --ids 1 --indent "" --verbose > t0.txt
