@@ -137,7 +137,7 @@ $ # emptying the buffers cache
 $ su -c 
 ```
 ```HTML
-<font color="">"free && sync && echo 3 > /proc/sys/vm/drop_caches && free"</font>
+<font color="red">"free && sync && echo 3 > /proc/sys/vm/drop_caches && free"</font>
 ```
 ```
 
