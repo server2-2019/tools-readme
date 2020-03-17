@@ -6,7 +6,6 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 - [ssh-keyscan](#ssh-keyscan)
 - [taxonkit](#taxonkit)
-- [list](#list)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## ssh-keyscan
