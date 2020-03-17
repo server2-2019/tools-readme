@@ -1,4 +1,4 @@
-#Python ETE3 Usage
+# Python ETE3 Usage
 A Python framework for the analysis and visualization of trees.
 =====
 ## Table of Contents
