@@ -200,6 +200,7 @@ L1 = L[:] #L1为L的克隆，即另一个拷贝。
 ## 字典操作
 Source:
 - [字典操作](https://blog.csdn.net/zhu_liangwei/article/details/7931701)<br>
+### 1. 常规操作
 
 ```
 dict = {‘ob1′:’computer’, ‘ob2′:’mouse’, ‘ob3′:’printer’}
@@ -223,6 +224,40 @@ D.cmp(dict1,dict2) #比较字典，(优先级为元素个数、键大小、键�
 dictionary的复制
 dict1 = dict #别名
 dict2=dict.copy() #克隆，即另一个拷贝。
+```
+### 2. 遍历字典
+#### （1）遍历key值
+```
+>>> a
+{'a': '1', 'b': '2', 'c': '3'}
+>>> for key in a:
+print(key+':'+a[key])
+-------------------------------
+>>> for key in a.keys():
+print(key+':'+a[key])
+# 在使用上，for key in a和 for key in a.keys():完全等价。
+```
+#### （2）遍历value值
+```
+>>> for value in a.values():
+print(value)
+```
+#### （3）遍历字典项
+```
+>>> for kv in a.items():
+print(kv)
+
+('a', '1')
+('b', '2')
+('c', '3')
+```
+#### （4）遍历字典健值
+```
+>>> for key,value in a.items():
+print(key+':'+value)
+--------------------------------
+>>> for (key,value) in a.items():
+print(key+':'+value)
 ```
 ***
 ## 字符串操作
