@@ -9,6 +9,7 @@
 - [去字符串收尾空格](#去字符串收尾空格)
 - [判断两个字符串是否相同](#判断两个字符串是否相同)
 - [python值相同变量不同内存值是否相同](#python值相同变量不同内存值是否相同)
+- [字符串拼接](#字符串拼接)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Python
@@ -99,3 +100,38 @@ Examples
 >>> id(b)
 11662828
 ```
+***
+## 字符串拼接
+Source:
+- [python字符串拼接方法](https://blog.csdn.net/weixin_39274753/article/details/81660887)<br>
+### 1. 方法1 “+” 拼接
+Examples
+```
+name = 'Jack'
+age = 18
+merge = name + "\t" + age
+```
+### 2. 方法2 “%” 拼接
+Examples
+```
+name = 'Jack'
+age = 18
+merge = "%s\t%s" % (name,age)
+```
+### 3. 方法3 “format” 拼接
+Examples
+```
+name = 'Jack'
+age = 18
+merge = "{}\t{}".format(name,age)
+# or
+merge = "{0}\t{1}".format(name,age)
+```
+### 4. 方法4 “join” 拼接
+Examples
+```
+name = 'Jack'
+age = 18
+merge = "\t".join([name,str(age)])
+```
+***
