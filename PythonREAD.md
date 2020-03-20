@@ -10,6 +10,9 @@
 - [判断两个字符串是否相同](#判断两个字符串是否相同)
 - [python值相同变量不同内存值是否相同](#python值相同变量不同内存值是否相同)
 - [字符串拼接](#字符串拼接)
+- [列表操作](#列表操作)
+- [字典操作](#字典操作)
+- [字符串操作](#字符串操作)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Python
@@ -50,6 +53,7 @@ Source:
 去右边空格，用rstrip()
 去首尾空格，用strip()
 ```
+***
 ## 判断两个字符串是否相同
 Source:
 - [判断两个字符串是否相同](https://blog.csdn.net/weixin_34146805/article/details/85828509)<br>
@@ -133,5 +137,128 @@ Examples
 name = 'Jack'
 age = 18
 merge = "\t".join([name,str(age)])
+```
+***
+## 列表操作
+Source:
+- [Python 列表(List)操作方法详解](https://blog.csdn.net/zhu_liangwei/article/details/7931701)<br>
+### 1. 创建列表
+只要把逗号分隔的不同的数据项使用方括号括起来即可。如下所示：
+```
+list1 = ['physics', 'chemistry', 1997, 2000];
+list2 = [1, 2, 3, 4, 5 ];
+sample_list = ['a',1,('a','b')]
+```
+### 2. 访问列表
+使用下标索引来访问列表，截取列表，删除列表的第一个值，列表中插入一个值，遍历列表，如下所示：
+```
+sample_list = ['a','b',0,1,3]
+#访问列表
+value_start = sample_list[0]
+end_value = sample_list[-1]
+# 截取列表
+sample_list[1:5]
+# 删除列表的第一个值
+del sample_list[0]
+# 列表中插入一个值
+sample_list[0:0] = ['sample value']
+# 得到列表的长度
+list_length = len(sample_list)
+# 列表遍历
+for element in sample_list:
+  print(element)
+```
+说明
+```
+以0开始，有负下标的使用
+0第一个元素，-1最后一个元素，
+-len第一个元 素，len-1最后一个元素
+取list的元素数量
+len(list) #list的长度。实际该方法是调用了此对象的__len__(self)方法。
+list的方法
+L.append(var) #追加元素
+L.insert(index,var)
+L.pop(var) #返回最后一个元素，并从list中删除之
+L.remove(var) #删除第一次出现的该元素
+L.count(var) #该元素在列表中出现的个数
+L.index(var) #该元素的位置,无则抛异常
+L.extend(list) #追加list，即合并list到L上
+L.sort() #排序
+L.reverse() #倒序
+list 操作符:,+,*，关键字del
+a[1:] #片段操作符，用于子list的提取
+[1,2]+[3,4] #为[1,2,3,4]。同extend()
+[2]*4 #为[2,2,2,2]
+del L[1] #删除指定下标的元素
+del L[1:3] #删除指定下标范围的元素
+list的复制
+L1 = L #L1为L的别名，用C来说就是指针地址相同，对L1操作即对L操作。函数参数就是这样传递的
+L1 = L[:] #L1为L的克隆，即另一个拷贝。
+
+```
+***
+## 字典操作
+Source:
+- [字典操作](https://blog.csdn.net/zhu_liangwei/article/details/7931701)<br>
+
+```
+dict = {‘ob1′:’computer’, ‘ob2′:’mouse’, ‘ob3′:’printer’}
+每一个元素是pair，包含key、value两部分。key是Integer或string类型，value 是任意类型。
+键是唯一的，字典只认最后一个赋的键值。
+
+dictionary的方法
+D.get(key, 0) #同dict[key]，多了个没有则返回缺省值，0。[]没有则抛异常
+D.has_key(key) #有该键返回TRUE，否则FALSE
+D.keys() #返回字典键的列表
+D.values()
+D.items()
+
+D.update(dict2) #增加合并字典
+D.popitem() #得到一个pair，并从字典中删除它。已空则抛异常
+D.clear() #清空字典，同del dict
+D.copy() #拷贝字典
+D.cmp(dict1,dict2) #比较字典，(优先级为元素个数、键大小、键值大小)
+#第一个大返回1，小返回-1，一样返回0
+
+dictionary的复制
+dict1 = dict #别名
+dict2=dict.copy() #克隆，即另一个拷贝。
+```
+***
+## 字符串操作
+Source:
+- [字符串操作](https://blog.csdn.net/zhu_liangwei/article/details/7931701)<br>
+
+```
+str = “Hello My friend”
+字符串是一个整 体。如果你想直接修改字符串的某一部分，是不可能的。但我们能够读出字符串的某一部分。
+子字符串的提取
+str[:6]
+字符串包含 判断操作符：in，not in
+“He” in str
+“she” not in str
+
+string模块，还提供了很多方法，如
+S.find(substring, [start [,end]]) #可指范围查找子串，返回索引值，否则返回-1
+S.rfind(substring,[start [,end]]) #反向查找
+S.index(substring,[start [,end]]) #同find，只是找不到产生ValueError异常
+S.rindex(substring,[start [,end]])#同上反向查找
+S.count(substring,[start [,end]]) #返回找到子串的个数
+
+S.lowercase()
+S.capitalize() #首字母大写
+S.lower() #转小写
+S.upper() #转大写
+S.swapcase() #大小写互换
+
+S.split(str, ‘ ‘) #将string转list，以空格切分
+S.join(list, ‘ ‘) #将list转string，以空格连接
+
+处理字符串的内置函数
+len(str) #串长度
+cmp(“my friend”, str) #字符串比较。第一个大，返回1
+max(‘abcxyz’) #寻找字符串中最大的字符
+min(‘abcxyz’) #寻找字符串中最小的字符
+
 ```
 ***
