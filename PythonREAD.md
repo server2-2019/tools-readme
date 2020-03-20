@@ -6,7 +6,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 - [判断文件是否存在](#判断文件是否存在)
-- [xxx](#xxx)
+- [去字符串收尾空格](#去字符串收尾空格)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Python
@@ -36,4 +36,21 @@ Examples
 ```
 XXX
 ```
+***
+## 去字符串收尾空格
+Source:
+- [去字符串收尾空格](https://www.jianshu.com/p/bd953fde69e6)<br>
+
+```
+字符串“  illusion  ”首尾都有空格
+去左边空格，用lstrip()
+去右边空格，用rstrip()
+去首尾空格，用strip()
+```
+Examples
+### 1. XXX
+```
+XXX
+```
+***
 
