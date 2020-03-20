@@ -7,6 +7,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 - [判断文件是否存在](#判断文件是否存在)
 - [去字符串收尾空格](#去字符串收尾空格)
+- [判断两个字符串是否相同](#判断两个字符串是否相同)
+- [python值相同变量不同内存值是否相同](#python值相同变量不同内存值是否相同)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Python
@@ -47,10 +49,53 @@ Source:
 去右边空格，用rstrip()
 去首尾空格，用strip()
 ```
-Examples
-### 1. XXX
+## 判断两个字符串是否相同
+Source:
+- [判断两个字符串是否相同](https://blog.csdn.net/weixin_34146805/article/details/85828509)<br>
 ```
-XXX
+The operators ``is`` and ``is not`` test for object identity: ``x is
+y`` is true if and only if *x* and *y* are the same object.  ``x is
+not y`` yields the inverse truth value.
+```
+### 1. is 主要是判断 2 个变量是否引用的是同一个对象，如果是的话，则返回 true，否则返回 false。
+```
+ is 相等代表两个对象的 id 相同（从底层来看的话，可以看作引用同一块内存区域）
+```
+Examples
+### 2. == 用来判断两个对象的值是否相等
+Examples
+```
+#-*-conding:utf-8-*-
+i='xinwen';
+m=input();
+if i==m:
+    print('yes');
+else:
+    print('no');
+ 
+input();
 ```
 ***
-
+## python值相同变量不同内存值是否相同
+Source:
+- [python 值相同变量名不同，内存地址相同吗？](https://bbs.csdn.net/topics/392267652)<br>
+小整数对象池：python在执行的时候，为了节约空间，帮我们创建好了小整数对象池，[-5~256]，都是固定的地址，不管你用不用，都会存在。
+```
+比如，a=5,b=5,id(a)和id(b)的地址都是小整数池中固定已经存在的地址，所以相等
+但如果，a=1000,b=1000,这时会给a一个地址，也会给b一个地址，但他们都不相等。
+```
+Examples
+```
+ >>> a = 256
+>>> b = 256
+>>> id(a)
+9987148
+>>> id(b)
+9987148
+>>> a = 257
+>>> b = 257
+>>> id(a)
+11662816
+>>> id(b)
+11662828
+```
