@@ -36,4 +36,21 @@ for excluding an assembly from RefSeq are only revealed by running the NCBI Prok
 ```
 ### Reasons an assembly is excluded from RefSeq
 - **abnormal gene to sequence ratio** - the ratio of the number of predicted genes to the length of the genome divided by 1000 is far outside the usual range for a Complete Genome assembly. The NCBI Prokaryotic Genome Annotation Pipeline typically expects to find an average of one gene for every 1,000 nucleotides in a genome assembly. The typical range is 0.8 to1.2; anything outside the range 0.5 to 1.5 is considered abnormal.
+- **derived from environmental source** - the source material for the assembly is from an environmental source rather than a pure culture leading to concern about the accuracy of organism assignment and possible cross-contamination.
+- **derived from metagenome** - the genomic sequence was assembled from metagenomic sequencing rather than a pure culture leading to concerns about the accuracy of organism assignment and possible cross-contamination.
+- **derived from single cell** - the source material for the assembly was amplified from a single cell leading to concern about the genome sequence accuracy.
+- **derived from surveillance project** - assembly generated from a pathogen surveillance project.
+- **fragmented assembly** - a prokaryotic assembly with contig L50 above 500, contig N50 below 5000, or more than 2,000 contigs.
+- **genome length too large** - total non-gapped sequence length of the assembly is more than 1.5 times that of the average for the genomes in the Assembly resource from the same species, more than 15 Mbp, or is otherwise suspiciously long.
+- **genome length too small** - total non-gapped sequence length of the assembly is less than half that of the average for the genomes in the Assembly resource from the same species, less than 300 Kbp, or is otherwise suspiciously short.
+- **low gene count** - the number of predicted genes is much lower than expected.
+- **low quality sequence** - long stretches of the sequence have a high proportion of ambiguous bases, are low complexity, or have some other indication that the sequence quality is low.
+- **many frameshifted proteins** - the CDSs predicted by the NCBI Prokaryotic Genome Annotation Pipeline have a suspiciously high number of frameshifts. For any clade containing at least 10 good quality assemblies the cutoff is more than three standard deviations from average or 5% of annotated CDSs, whichever is larger. For any clade containing less than 10 good quality assemblies the cutoff is more than 30% of total CDSs.
+- **metagenome** - a metagenome containing sequences from a mixture of organisms.
+- **missing ribosomal protein genes - the NCBI Prokaryotic Genome Annotation Pipeline failed to find at least one copy of each essential ribosomal protein.
+- **missing rRNA genes** - the NCBI Prokaryotic Genome Annotation Pipeline failed to find at least one copy each of 5S, 16S, and 23S rRNA gene.
+- **missing tRNA genes** - the NCBI Prokaryotic Genome Annotation Pipeline failed to find tRNA genes with anticodons for 2 or more of the expected 20 amino-acids.
+- **partial** - the assembly has only partial genome representation.
+- **RefSeq annotation failed** - RefSeq failed to produce valid annotation.
+- **untrustworthy as type** - does not meet the criteria for a type strain assembly for use in ANI analysis.
 ***
