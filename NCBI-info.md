@@ -35,5 +35,5 @@ but not others.
 for excluding an assembly from RefSeq are only revealed by running the NCBI Prokaryotic Genome Annotation Pipeline (PGAP).
 ```
 ### Reasons an assembly is excluded from RefSeq
-- *abnormal gene to sequence ratio* - the ratio of the number of predicted genes to the length of the genome divided by 1000 is far outside the usual range for a Complete Genome assembly. The NCBI Prokaryotic Genome Annotation Pipeline typically expects to find an average of one gene for every 1,000 nucleotides in a genome assembly. The typical range is 0.8 to1.2; anything outside the range 0.5 to 1.5 is considered abnormal.
+- **abnormal gene to sequence ratio** - the ratio of the number of predicted genes to the length of the genome divided by 1000 is far outside the usual range for a Complete Genome assembly. The NCBI Prokaryotic Genome Annotation Pipeline typically expects to find an average of one gene for every 1,000 nucleotides in a genome assembly. The typical range is 0.8 to1.2; anything outside the range 0.5 to 1.5 is considered abnormal.
 ***
