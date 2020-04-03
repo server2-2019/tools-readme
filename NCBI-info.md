@@ -4,7 +4,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 - [Before use](#before-use)
-- [Assembly-genome-refseq](#Assembly-genome-refseq)
+- [Refseq-assembly-genome-filter-criteria](#Refseq-assembly-genome-filter-criteria)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -13,7 +13,7 @@ Please download and uncompress these files:
 - [Assembly-genome-refseq](https://www.ncbi.nlm.nih.gov/assembly/help/anomnotrefseq/)<br>
 <p align="left">Assembly Anomalies and Other Reasons a Genome Assembly may be Excluded from RefSeq.</p>
 
-## Assembly-genome-refseq
+## Refseq-assembly-genome-filter-criteria
 Assembly Anomalies and Other Reasons a Genome Assembly may be Excluded from RefSeq<br>
 Source websie: [https://www.ncbi.nlm.nih.gov/assembly/help/anomnotrefseq/](https://www.ncbi.nlm.nih.gov/assembly/help/anomnotrefseq/)<br>
 ### Introduction
