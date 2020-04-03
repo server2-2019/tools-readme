@@ -4,7 +4,9 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 - [Before use](#before-use)
+- [SRA Toolkit Documentation](#SRA-Toolkit-Documentation)
 - [Refseq-assembly-genome-filter-criteria](#Refseq-assembly-genome-filter-criteria)
+
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -12,6 +14,24 @@
 Please download and uncompress these files:
 - [Assembly-genome-refseq](https://www.ncbi.nlm.nih.gov/assembly/help/anomnotrefseq/)<br>
 <p align="left">Assembly Anomalies and Other Reasons a Genome Assembly may be Excluded from RefSeq.</p>
+
+## SRA Toolkit Documentation
+Source websie: [https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc)
+### Frequently Used Tools:
+- **[fastq-dump](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=fastq-dump)**:Convert SRA data into fastq format
+- **[prefetch](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=prefetch)**: Allows command-line downloading of SRA, dbGaP, and ADSP data
+- **[sam-dump](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=sam-dump)**: Convert SRA data to sam format
+- **[sra-pileup](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=sra-pileup)**: Generate pileup statistics on aligned SRA data
+- **[vdb-config](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=vdb-config)**: Display and modify VDB configuration information
+- **[vdb-decrypt](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=vdb-decrypt)**: Decrypt non-SRA dbGaP data ("phenotype data")
+### Additional Tools:
+- **[abi-dump](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=abi-dump)**: Convert SRA data into ABI format (csfasta / qual)
+- **[illumina-dump](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=illumina-dump)**: Convert SRA data into Illumina native formats (qseq, etc.)
+- **[sff-dump](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=sff-dump)**: Convert SRA data to sff format
+- **[sra-stat](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=sra-stat)**: Generate statistics about SRA data (quality distribution, etc.)
+- **[vdb-dump](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=vdb-dump)**: Output the native VDB format of SRA data.
+- **[vdb-encrypt](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=vdb-encrypt)**: Encrypt non-SRA dbGaP data ("phenotype data")
+- **[vdb-validate](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=vdb-validate)**: Validate the integrity of downloaded SRA data
 
 ## Refseq-assembly-genome-filter-criteria
 Assembly Anomalies and Other Reasons a Genome Assembly may be Excluded from RefSeq<br>
