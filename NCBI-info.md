@@ -53,4 +53,12 @@ for excluding an assembly from RefSeq are only revealed by running the NCBI Prok
 - **partial** - the assembly has only partial genome representation.
 - **RefSeq annotation failed** - RefSeq failed to produce valid annotation.
 - **untrustworthy as type** - does not meet the criteria for a type strain assembly for use in ANI analysis.
+## Anomalous assemblies
+- **chimeric** - sequences from two different organisms are joined together.
+- **contaminated** - sequences from another organism, cloning vectors, linkers, adapters or primers are present in the assembly.
+- **hybrid** - sequences from a hybrid between different species, strains or isolates.
+- **misassembled** - alignment to related genome assemblies or other evidence indicates the assembly is likely to have errors.
+- **mixed culture** - sequences come from two or more organisms that were not cultured separately.
+- **sequence duplications** - assembly has one or more large duplications.
+- **unverified source organism** - the origin of the assembly is misidentified.
 ***
