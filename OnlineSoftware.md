@@ -8,4 +8,4 @@
 
 ## Xshell
 - Xshell, the industry's most powerful SSH client
-- [Free Xshell download instruction](https://github.com/server2-2019/tools-readme/new/master)
+- [Free Xshell download instruction](https://blog.csdn.net/p393975269/article/details/103959420?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1)
