@@ -9,4 +9,4 @@ Review Published: 18 February 2020 - Digestive Diseases and Sciences
 - [Intratumoral accumulation of gut microbiota facilitates CD47-based immunotherapy via STING signaling](https://rupress.org/jem/article-abstract/217/5/e20192282/133861/Intratumoral-accumulation-of-gut-microbiota?redirectedFrom=fulltext)<br>
 Brief Definitive Report|March 06 2020 - have not downloaded yet
 - [The  Influence  of  Lung  Microbiota  on  LungCarcinogenesis,  Immunity,and  Immunotherapy](https://www.sciencedirect.com/science/article/pii/S2405803319302651)<br>
-- Trends in Cancer, 2020 - Elsevier
+Trends in Cancer, 2020 - Elsevier
