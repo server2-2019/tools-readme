@@ -59,6 +59,8 @@ Flags:
       --verbose           print verbose information
 
 Use "taxonkit [command] --help" for more information about a command
+echo "Oscillospiraceae" | taxonkit name2taxid | taxonkit lineage --taxid-field 2 |cut -f 2,3 | taxonkit reformat | cut -f 1,3 | sed -r 's/;/\t/g' | csvtk add-header -t -n taxid,kindom,phylum,class,order,family,genus,species | csvtk pretty -t 
+taxonkit list --show-rank --show-name --indent "" --ids 1730 | grep -P "species"
 ```
 ***
 ## list
