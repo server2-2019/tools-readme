@@ -5,6 +5,7 @@
 ## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+- [argparse CustomAction](#argparse-customaction)
 - [判断文件是否存在](#判断文件是否存在)
 - [去字符串收尾空格](#去字符串收尾空格)
 - [判断两个字符串是否相同](#判断两个字符串是否相同)
@@ -35,7 +36,65 @@ Source:
 - [判断文件是否存在的三种做法](https://www.cnblogs.com/jhao/p/7243043.html)<br>
 
 ```
+import argparse
 
+class CustomAction(argparse.Action):
+    def __init__(self,
+                 option_strings,
+                 dest,
+                 nargs=None,
+                 const=None,
+                 default=None,
+                 type=None,
+                 choices=None,
+                 required=False,
+                 help=None,
+                 metavar=None):
+        argparse.Action.__init__(self,
+                                 option_strings=option_strings,
+                                 dest=dest,
+                                 nargs=nargs,
+                                 const=const,
+                                 default=default,
+                                 type=type,
+                                 choices=choices,
+                                 required=required,
+                                 help=help,
+                                 metavar=metavar,
+                                 )
+        print
+        print 'Initializing CustomAction'
+        for name,value in sorted(locals().items()):
+            if name == 'self' or value is None:
+                continue
+            print '  %s = %r' % (name, value)
+        return
+
+    def __call__(self, parser, namespace, values, option_string=None):
+        print
+        print 'Processing CustomAction for "%s"' % self.dest
+        print '  parser = %s' % id(parser)
+        print '  values = %r' % values
+        print '  option_string = %r' % option_string
+        
+        # Do some arbitrary processing of the input values
+        if isinstance(values, list):
+            values = [ v.upper() for v in values ]
+        else:
+            values = values.upper()
+        # Save the results in the namespace using the destination
+        # variable given to our constructor.
+        setattr(namespace, self.dest, values)
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('-a', action=CustomAction)
+parser.add_argument('-m', nargs='*', action=CustomAction)
+parser.add_argument('positional', action=CustomAction)
+
+results = parser.parse_args(['-a', 'value', '-m' 'multi-value', 'positional-value'])
+print
+print results
 ```
 Examples
 ### 1. XXX
@@ -43,6 +102,13 @@ Examples
 XXX
 ```
 ***
+## argparse CustomAction
+Source:
+- [argparse CustomAction](https://pymotw.com/2/argparse/)
+```
+
+```
+
 ## 去字符串收尾空格
 Source:
 - [去字符串收尾空格](https://www.jianshu.com/p/bd953fde69e6)<br>
