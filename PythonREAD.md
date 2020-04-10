@@ -5,6 +5,7 @@
 ## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+- [object class](#object-class)
 - [argparse CustomAction](#argparse-customaction)
 - [判断文件是否存在](#判断文件是否存在)
 - [去字符串收尾空格](#去字符串收尾空格)
@@ -35,6 +36,47 @@ xxx
 Source:
 - [判断文件是否存在的三种做法](https://www.cnblogs.com/jhao/p/7243043.html)<br>
 
+```
+```
+Examples
+### 1. XXX
+```
+XXX
+```
+***
+## object class
+- [object class](https://blog.csdn.net/qq_34964399/article/details/79119896)
+```
+class Cat:
+  def __init__(self):
+    print("-----haha-----")
+
+  def eat(self):
+    print("cat is eating a fish ...")
+
+  def drink(self):
+    print("cat is drinking kele ...")
+
+  def introduce(self):
+    print("%s is %d years old" % (self.name, self.age))
+
+# create a object
+tom = Cat()
+tom.eat()
+tom.drink()
+tom.name = 'Tom'
+tom.age = 40
+tom.introduce()
+
+lanmao = Cat()
+lanmao.name = "blue cat"
+lanmao.age = 10
+lanmao.introduce()
+
+```
+## argparse CustomAction
+Source:
+- [argparse CustomAction](https://pymotw.com/2/argparse/)
 ```
 import argparse
 
@@ -95,18 +137,6 @@ parser.add_argument('positional', action=CustomAction)
 results = parser.parse_args(['-a', 'value', '-m' 'multi-value', 'positional-value'])
 print
 print results
-```
-Examples
-### 1. XXX
-```
-XXX
-```
-***
-## argparse CustomAction
-Source:
-- [argparse CustomAction](https://pymotw.com/2/argparse/)
-```
-
 ```
 
 ## 去字符串收尾空格
