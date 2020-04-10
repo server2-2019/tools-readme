@@ -48,7 +48,42 @@ XXX
 ```
 ***
 ## Python中下划线的5种含义
-- [Python中下划线的5种含义](https://zhuanlan.zhihu.com/p/36173202)
+- [Python中下划线的5种含义](https://zhuanlan.zhihu.com/p/36173202)<br>
+1. 单前导下划线 _var, 以单个下划线开头的变量或方法仅供内部使用。<br>
+```
+# This is my_module.py:
+
+def external_func():
+   return 23
+
+def _internal_func():
+   return 42
+   
+>>> from my_module import *
+>>> external_func()
+23
+>>> _internal_func()
+NameError: "name '_internal_func' is not defined"
+
+顺便说一下，应该避免通配符导入，因为它们使名称空间中存在哪些名称不清楚。 为了清楚起见，坚持常规导入更好。
+>>> import my_module
+>>> my_module.external_func()
+23
+>>> my_module._internal_func()
+42
+单个下划线是一个Python命名约定，表示这个名称是供内部使用的。 它通常不由Python解释器强制执行，仅仅作为一种对程序员的提示。
+```
+2. 单末尾下划线 var_, 个变量的最合适的名称已经被一个关键字所占用。 因此，像class或def这样的名称不能用作Python中的变量名称。 在这种情况下，你可以附加一个下划线来解决命名冲突：
+```
+>>> def make_object(name, class):
+SyntaxError: "invalid syntax"
+
+>>> def make_object(name, class_):
+...    pass
+```
+3. 双前导下划线 __var<br>
+
+
 
 
 ## file read & write
