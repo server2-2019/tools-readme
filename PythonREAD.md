@@ -5,6 +5,7 @@
 ## Table of Contents
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+- [file read & write](#file-read-&-write)
 - [Time](#time)
 - [object class](#object-class)
 - [argparse CustomAction](#argparse-customaction)
@@ -45,6 +46,26 @@ Examples
 XXX
 ```
 ***
+## file read & write
+- [file read & write](https://blog.csdn.net/werm520/article/details/6898473)
+```
+f = open('cdays-4-test.txt', 'r')                   #以读方式打开文件
+result = list()
+for line in f.readlines():                          #依次读取每行
+    line = line.strip()                             #去掉每行头尾空白
+    if not len(line) or line.startswith('#'):       #判断是否是空行或注释行
+        continue                                    #是的话，跳过不处理
+    result.append(line)                             #保存
+result.sort()                                       #排序结果
+print result
+open('cdays-4-result.txt', 'w').write('%s' % '\n'.join(result)) #保存入结果文件
+
+
+.read() 每次读取整个文件，它通常将读取到底文件内容放到一个字符串变量中，也就是说 .read() 生成文件内容是一个字符串类型。
+.readline()每只读取文件的一行，通常也是读取到的一行内容放到一个字符串变量中，返回str类型。
+.readlines()每次按行读取整个文件内容，将读取到的内容放到一个列表中，返回list类型。
+```
+
 ## Time
 - [format of time](https://blog.csdn.net/Liqinghai058/article/details/52757663?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2)
 ```
