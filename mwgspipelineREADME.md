@@ -1,3 +1,4 @@
+'''
 # tools-readme
 Record readme of often used software
 #===============================================================================
@@ -7382,3 +7383,5 @@ find /work/workspace/zhurj/project/15_collaborator/merck_20210615/QC/quast | gre
 
 /work/program/current/ncbi-blast/bin/blastp -query /work/workspace/zhurj/project/2_swgs/MNH04863/gene/ClpB/uniprot_ClpB_Hafnia_alvei.fasta  -task blastp -db /work/workspace/zhurj/project/2_swgs/MNH04863/protein/MNH04863E1L1S1 -out /work/workspace/zhurj/project/2_swgs/MNH04863/gene/ClpB/result/clpB_MNH04863_protein_outfmt7.out -max_target_seqs 5 -num_threads 16 -outfmt 7
 
+'''
+	
