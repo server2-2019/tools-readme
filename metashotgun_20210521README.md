@@ -1,4 +1,34 @@
-# tools-readme
+# Metagenomic analysis summary
+
+## Table of Contents
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+- [有参数据分析](#有参数据分析)
+- [无参数据分析](#无参数据分析)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Before use - Links
+Please download and uncompress these files:
+- [info](link)<br>
+<p align="left">xxxxx.</p>
+
+## github help
+Github help<br>
+Source websie: [https://help.github.com/en/github](https://help.github.com/en/github/)<br>
+### Introduction
+```
+xxx
+```
+
+## 有参数据分析
+基于metaphlan3， and humann3
+
+### 数据质控
+```
+```
+
+
 Record readme of often used software
 2021.05.21
 中山肿瘤43个宏基因组测序样品数据分析
