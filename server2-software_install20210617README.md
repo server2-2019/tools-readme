@@ -1,7 +1,34 @@
-# tools-readme
-Record readme of often used software
 2019.Nov07-13:13
 
+去除环境变量里的重复项：
+export PATH=$(echo $PATH | sed 's/:/\n/g' | sort | uniq | tr -s '\n' ':' | sed 's/:$//g')
+
+vi /etc/hosts
+
+vi /etc/group
+database:x:1000:zhouyj,zhurj,liangyj,xiongz,liangzj,data,fastq,fasta
+moon:x:1001:zhouyj,zhurj,liangyj,xiongz,liangzj,instal,data,fasta,fastq,moonis
+bioinfor:x:1002:zhangdy,zhangcc
+project:x:1003:zhouyj,zhurj,xiongz,liangzj,fasta,fastq,moonis
+program:x:1004:zhouyj,zhurj,liangyj,xiongz,liangzj,instal
+
+
+parallel -j 1 'usermod -a -G bioinfor {1}' ::: zhurj liangzj liangyj
+
+test
+useradd test
+passwd test
+# moon123456
+parallel 'mkdir -p /work/workspace/test/{1} ' ::: bin develop download program project script software
+usermod -a -G bioinfor test
+chown -R test:bioinfor /work/workspace/test
+
+parallel -j 1 'usermod -a -G {1} test' ::: database moon project program
+
+
+root 权限删除 test
+userdel -f -r test # -f 强制删除账户不管对方是否在登录，-r 删除账户下的目录
+rm /work/workspace/test -rf
 
 创建新用户
 2021.05.13
@@ -12,7 +39,36 @@ passwd zhangdy
 # moon123456
 parallel 'mkdir -p /work/workspace/zhangdy/{1} ' ::: bin develop download program project script software
 usermod -a -G bioinfor zhangdy
+parallel -j 1 'usermod -a -G {1} zhangdy' ::: database moon project program
 chown -R zhangdy:bioinfor  /work/workspace/zhangdy
+chown -R zhangdy:bioinfor  /home/zhangdy
+
+2021.07.05
+useradd zhangcc
+passwd zhangcc
+# moon123456
+parallel 'mkdir -p /work/workspace/zhangcc/{1} ' ::: bin develop download program project script software
+usermod -a -G bioinfor zhangcc
+usermod -a -G database zhangcc
+parallel -j 1 'usermod -a -G {1} zhangcc' ::: moon project program
+chown -R zhangcc:bioinfor  /work/workspace/zhangcc
+chown -R zhangcc:bioinfor  /home/zhangcc
+
+2021.09.13
+useradd lanzhou
+passwd lanzhou
+# moon123456
+parallel 'mkdir -p /work/workspace/lanzhou/{1} ' ::: bin develop download program project script software
+usermod -a -G bioinfor lanzhou
+usermod -a -G database lanzhou
+parallel -j 1 'usermod -a -G {1} lanzhou' ::: moon project program
+chown -R lanzhou:bioinfor  /work/workspace/lanzhou
+chown -R lanzhou:bioinfor  /home/lanzhou
+
+服务器 IP: 192.168.2.20
+账户： lanzhou
+密码： moon123456
+工作目录： /work/workspace/lanzhou
 
 
 content in /home/zhurj/.condarc
@@ -531,6 +587,7 @@ cpanm Bio::DB::EUtilities -l /work/workspace/zhurj/lib/perl --mirror http://mirr
 cmake install
 ref: https://blog.csdn.net/Anton8801/article/details/94282363
 cd /work/workspace/zhurj/software
+
 tar zxvf cmake-3.12.3.tar.gz
 cd cmake-3.12.3
 ./bootstrap --prefix=/work/workspace/zhurj/bin
@@ -1094,6 +1151,8 @@ if (!requireNamespace("BiocManager", quietly=TRUE))
 BiocManager::install("RBGL")   
 RBGL
 
+# 2021.06.30
+install.packages("randomForest",repos="http://mirrors.ustc.edu.cn/CRAN/")
 # diffEnrich
 # https://github.com/SabaLab/diffEnrich
 
@@ -1443,4 +1502,166 @@ conda install -c bioconda fgmp
 
 # 2021.06.17
 blastdb 下载地址 https://ftp.ncbi.nlm.nih.gov/blast/db/
+
+/work/workspace/zhurj/project/6_learning/python/Cookbook
+https://onedrive.live.com/edit.aspx?action=editnew&resid=7A2E5A40CB933C63!827&ithint=file%2cxlsx&action=editnew&wdNewAndOpenCt=1624586271094&wdPreviousSession=6279bc17-8a71-40c4-aa74-e18c887e2ff8&wdOrigin=OFFICECOM-WEB.START.NEW
+
+# 2021.06.29
+GTDBTK v1.5.1
+conda create -n GTDBr95
+conda install -c bioconda gtdbtk
+conda env remove -n GTDBr95
+# Note, version gtdbtk v0.3.2
+
+# 2021.07.08
+# https://anaconda.org/conda-forge/falcon
+# 使用FALCON对三代测序数据进行基因组组装： http://www.chenlianfu.com/?p=2755
+# falcon组装及polish: https://www.jianshu.com/p/2c4a094c8675
+conda create -n falcon python=2.7.9
+source activate falcon
+conda install -c bioconda pb-falcon
+conda install -c bioconda dazz_db
+conda install -c bioconda daligner
+# deeptools 3.5.1
+conda install -c bioconda deeptools
+conda install -c bioconda bam2fastx
+conda install -c bioconda circlator
+conda install -c bioconda pbgcpp
+conda install -c bioconda pbmm2  # doesn't work
+conda install -c bioconda pb-assembly
+/work/workspace/zhurj/bin/miniconda3/bin/samtools # samtools doesn't work
+
+
+# canu: https://zhuanlan.zhihu.com/p/362068540
+
+conda remove -n canu  --all
+source activate canu
+conda install -c bioconda canu
+# bam2fastx : https://github.com/PacificBiosciences/bam2fastx
+conda install -c bioconda bam2fastx
+conda install -c bioconda pbmm2
+# circlator 环化基因组
+conda install -c bioconda circlator
+conda install -c bioconda sambamba
+# 2021.08.02
+# 安装 https://anaconda.org/bioconda/repeatmasker
+conda install -c bioconda repeatmasker
+conda install -c bioconda trf
+# 软件下载 从 http://www.repeatmasker.org/RepeatMasker/ 下载 RepeatMasker-4.1.2-p1.tar.gz
+tar xf RepeatMasker-4.1.2-p1.tar.gz
+
+
+2021.07.09
+root 更新git
+1. download “git-2.30.0.tar.gz” from https://cdn.kernel.org/pub/software/scm/git/
+2. 
+0）安装依赖软件
+yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker
+
+1）卸载系统自带的底版本git（1.8.3.1）
+[root@uatjenkins01 ~]# git --version
+[root@uatjenkins01 ~]# yum remove git
+ 
+2）编译安装最新的git版本
+# put git-2.30.0.tar.gz under /usr/local/src/
+[root@ ~]# cd /usr/local/src/
+[root@ src]# tar -vxf git-2.30.0.tar.xz
+[root@ src]# cd git-2.30.0
+[root@ git-2.15.1]# make prefix=/usr/local/git all
+[root@ git-2.15.1]# make prefix=/usr/local/git install
+[root@ git-2.15.1]# echo "export PATH=$PATH:/usr/local/git/bin" >> /etc/profile
+[root@ git-2.15.1]# source /etc/profile
+
+[root@ ~]# git --version
+
+2021.07.12
+pacbio 用二代测序软件下载安装
+# 下载文件存放路径： /work/workspace/zhurj/software
+wget https://github.com/broadinstitute/pilon/releases/download/v1.24/pilon-1.24.jar
+java -Xmx16G -jar pilon-1.24.jar
+
+2021.07.21
+网络设置查询： https://www.cnblogs.com/linhaifeng/articles/5937962.html#_label2
+# windows 系统
+打开cmd执行命令：ipconfig /all
+全国通用DNS地址（国内用户推荐使用，速度较快！）
+首先DNS服务器地址添：114.114.114.114  (位于北京人民英雄纪念碑）
+备用DNS服务器地址添：114.114.115.115
+全球通用DNS地址（此DNS地址为谷歌服务器的）
+首选DNS服务器地址添：8.8.8.8
+备用DNS服务器地址添：8.8.4.4
+
+查看本地dns缓存命令：ipconfig /displaydns
+清除本地dns缓存命令：ipconfig /flushdns
+
+
+# 2021.07.21
+download Xbin.tgz from http://ftp.xfree86.org/pub/XFree86/4.8.0/binaries/Linux-x86_64-glibc23/
+cd /work/workspace/zhurj/software
+# put Xbin.tgz under /work/workspace/zhurj/software
+tar zxf Xbin.tgz -C /work/workspace/zhurj/bin/Xbin
+cp /work/workspace/zhurj/bin/Xbin/lib64/libXtst.so.6 /work/workspace/zhurj/instal/megan/jre/lib
+cp /work/workspace/zhurj/bin/Xbin/lib64/libXi.so.6 /work/workspace/zhurj/instal/megan/jre/lib
+/work/workspace/zhurj/instal/megan/jre/lib
+
+# 2021.07.23 megan reference 更新
+# https://software-ab.informatik.uni-tuebingen.de/download/megan6/welcome.html
+download megan-map-Jan2021.db.zip
+
+
+env: python3.6
+下载sqlite-tools-linux-x86-3360000.zip
+ln -s /work/workspace/zhurj/software/sqlite-tools-linux-x86-3360000/sqlite3 /work/workspace/zhurj/bin/miniconda3/envs/python3.6/bin/sqlite3
+
+
+download prot.accession2taxid.gz from ftp://ftp.ncbi.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.gz
+
+2021.07.30
+2.9T    ./zhurj
+2.0T    ./liangyj
+8.5T    ./liangzj
+3.5T    ./zhangcc
+
+# 2021.07.30
+# python3.6
+pip3 install pylint
+pip3 install PasteScript
+conda install -c bioconda trnascan-se
+conda install -c bioconda 
+# v1.1.4
+
+# canu
+conda install -c bioconda trnascan-se
+conda install -c bioconda barrnap
+
+# 查看服务器运行星狂
+1. 进入root
+2. ssh mnclient02 # 选择节点
+3. top ， c （可以显示详细的命令）
+
+# docker
+126.com
+shitou6
+8docker
+
+# 2021.09.24
+# 9.9M gene download from https://db.cngb.org/microbiome/genecatalog/genecatalog_human/
+IGC.fa.gz: Integrated non-redundant gene catalog (IGC, nucleotide sequences, fasta)
+IGC.pep.gz: Integrated non-redundant gene catalog (IGC, amino acid sequences, fasta)
+IGC.annotation_OF.summary.gz: IGC annotation and occurrence frequency summary table
+linux dir： /work/workspace/zhurj/database/genecatalog
+
+filezilla 下载  Unified Human Gastrointestinal Protein (UHGP) catalog
+参考文献： 
+Published: 20 July 2020
+A unified catalog of 204,938 reference genomes from the human gut microbiome
+
+下载地址：ftp://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/human-gut/v1.0/uhgp_catalogue/
+filezilla INPUT
+HOST: ftp://ftp.ebi.ac.uk/
+U: anonymous
+W: 
+P: 21
+downloaded file: uhgp-90.tar.gz
+linux dir： /work/workspace/zhurj/database/genecatalog
 
